@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Codeigniter 4 User Form With Validation Example</title>
+  <title>Codeigniter 4 Edit Compte Form With Validation Example</title>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
@@ -20,37 +20,28 @@
  
     <div class="row">
       <div class="col-md-9">
-        <form action="<?php echo base_url('public/index.php/compte/store');?>" name="compte_create" id="compte_create" method="post" accept-charset="utf-8">
+        <form action="<?php echo base_url('public/index.php/compte/update');?>" name="edit-compte" id="edit-compte" method="post" accept-charset="utf-8">
  
-          <div class="form-group">
+        <input type="hidden" name="idcompte" class="form-control" id="idcompte" value="<?php echo $c['idcompte']  ?>">
+        <div class="form-group">
             <label for="formGroupExampleInput">Numero Agence</label>
-            <input type="text" name="numAgence" class="form-control" id="formGroupExampleInput" placeholder="Please enter numAgence">
+            <input type="text" name="numAgence" class="form-control" id="formGroupExampleInput" placeholder="Please enter numAgence" value="<?php echo $c['numAgence'] ?>" >
              
           </div> 
  
           <div class="form-group">
             <label for="formGroupExampleInput">Numero Compte</label>
-            <input type="text" name="numCompte" class="form-control" id="formGroupExampleInput" placeholder="Please enter numCompte">
+            <input type="text" name="numCompte" class="form-control" id="formGroupExampleInput" placeholder="Please enter numCompte" value="<?php echo $c['numCompte'] ?>">
              
           </div>  
           
           <div class="form-group">
             <label for="formGroupExampleInput">Cle Rib</label>
-            <input type="text" name="cleRib" class="form-control" id="formGroupExampleInput" placeholder="Please enter cleRib">
+            <input type="text" name="cleRib" class="form-control" id="formGroupExampleInput" placeholder="Please enter cleRib" value="<?php echo $c['cleRib'] ?>">
              
           </div>  
 
-          <div class="form-froup">
-							<label>Client</label>
-							<select type="" id="clientP" name="idclient">
-            <option>--Sélectionner le client--</option>
-             <?php foreach($users as $cp): ?>
-                  <option value="<?php echo $cp['id']; ?>"><?php echo $cp['name']; ?></option>
-                  <?php
-                  endforeach;
-                ?>
-            </select>
-			</div>
+          
  
           <div class="form-group">
            <button type="submit" id="send_form" class="btn btn-success">Submit</button>
@@ -63,11 +54,11 @@
   
 </div>
  <script>
-   if ($("#compte_create").length > 0) {
-      $("#compte_create").validate({
+   if ($("#edit-compte").length > 0) {
+      $("#edit-compte").validate({
       
     rules: {
-      numAgence: {
+        numAgence: {
         required: true,
       },
   
@@ -77,9 +68,7 @@
   
       cleRib: {
         required: true,
-      },
-  
-       
+      },  
     },
     messages: {
         

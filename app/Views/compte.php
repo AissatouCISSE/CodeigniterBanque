@@ -73,8 +73,8 @@ li a:hover {
              <td><?php echo $c['cleRib']; ?></td>
              <td><?php echo $c['idclient']; ?></td>
              <td>
-              <a href="<?php echo base_url('public/index.php/compte/edit/'.$c['id']);?>" class="btn btn-success">Edit</a>
-              <a href="<?php echo base_url('public/index.php/compte/delete/'.$c['id']);?> " class="btn btn-danger" onclick="return confirm('Voulez-vous supprimer')">Delete</a>
+              <a href="<?php echo base_url('public/index.php/compte/edit/'.$c['idcompte']);?>" class="btn btn-success">Edit</a>
+              <a href="<?php echo base_url('public/index.php/compte/delete/'.$c['idcompte']);?> " class="btn btn-danger" onclick="return confirm('Voulez-vous supprimer')">Delete</a>
               </td>
           </tr>
          <?php endforeach; ?>

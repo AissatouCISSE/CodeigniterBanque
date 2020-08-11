@@ -6,5 +6,5 @@ class UserModel extends Model
 {
     protected $table = 'users';
  
-    protected $allowedFields = ['id','name', 'email'];
+    protected $allowedFields = ['name', 'email'];
 }

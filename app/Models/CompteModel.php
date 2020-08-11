@@ -9,11 +9,5 @@ class CompteModel extends Model
  
     protected $allowedFields = ['numAgence', 'numCompte' , 'cleRib' , 'idclient'];
 
-    public function client()
-    {    
-        $model = new UserModel();
- 
-        $data['users'] = $model->$model->find('id');
-        
-    } 
+   
 }
